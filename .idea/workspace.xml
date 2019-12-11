@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="161024d8-2647-4f4f-b1f8-2a1fb1e752c8" name="Default Changelist" comment="" />
+    <list default="true" id="161024d8-2647-4f4f-b1f8-2a1fb1e752c8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +23,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
@@ -31,19 +37,26 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/test/spark" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
-  <component name="RunManager" selected="Application.FriendsByFirstLetter">
-    <configuration name="FriendsByAge" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.sundogsoftware.spark.FriendsByAge" />
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/com/test/spark" />
+      <recent name="$PROJECT_DIR$/" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.DegreesOfSeparation">
+    <configuration name="DegreesOfSeparation" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.test.spark.DegreesOfSeparation" />
       <module name="SparkScalaCourse" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.sundogsoftware.spark.*" />
+          <option name="PATTERN" value="com.test.spark.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -51,8 +64,47 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FriendsByFirstLetter" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.test.spark.FriendsByFirstLetter" />
+    <configuration name="MostPopularSuperhero" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.test.spark.MostPopularSuperhero" />
+      <module name="SparkScalaCourse" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.test.spark.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PopularMovies" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.test.spark.PopularMovies" />
+      <module name="SparkScalaCourse" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.test.spark.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PopularMoviesNicer" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.test.spark.PopularMoviesNicer" />
+      <module name="SparkScalaCourse" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.test.spark.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PurchaseByCustomer" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.test.spark.PurchaseByCustomer" />
       <module name="SparkScalaCourse" />
       <extension name="coverage">
         <pattern>
@@ -75,8 +127,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.FriendsByFirstLetter" />
-        <item itemvalue="Application.FriendsByAge" />
+        <item itemvalue="Application.DegreesOfSeparation" />
+        <item itemvalue="Application.MostPopularSuperhero" />
+        <item itemvalue="Application.PopularMovies" />
+        <item itemvalue="Application.PopularMoviesNicer" />
+        <item itemvalue="Application.PurchaseByCustomer" />
       </list>
     </recent_temporary>
   </component>
@@ -110,11 +165,15 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="555" y="200" width="800" height="677" key="#Project_Structure/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1574885254039" />
-    <state x="2343" y="217" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575040682451">
+    <state x="435" y="131" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575673629956">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="435" y="131" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1575673629956" />
+    <state x="2343" y="217" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@1920.0.1920.1080" timestamp="1575040682451" />
+    <state x="2587" y="358" width="574" height="390" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1575644001843">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="435" y="131" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1575040282312" />
-    <state x="2343" y="217" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@1920.0.1920.1080" timestamp="1575040682451" />
+    <state x="2587" y="358" width="574" height="390" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@1920.0.1920.1080" timestamp="1575644001843" />
     <state x="2658" y="469" width="434" height="171" key="#com.intellij.framework.addSupport.AddSupportForSingleFrameworkDialog" timestamp="1575017745490">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -127,57 +186,69 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="3031" y="184" width="489" height="567" key="DetectedRootsChooserDialog/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@1920.0.1920.1080" timestamp="1575016999896" />
-    <state x="2502" y="262" width="735" height="513" key="FileChooserDialogImpl" timestamp="1575019576734">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="582" y="282" width="735" height="513" key="FileChooserDialogImpl/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1574887098276" />
-    <state x="2502" y="262" width="735" height="513" key="FileChooserDialogImpl/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@1920.0.1920.1080" timestamp="1575019576734" />
-    <state width="1874" height="296" key="GridCell.Tab.0.bottom" timestamp="1575041586592">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1874" height="296" key="GridCell.Tab.0.bottom/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1575040238753" />
-    <state width="1874" height="296" key="GridCell.Tab.0.bottom/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@1920.0.1920.1080" timestamp="1575041586592" />
-    <state width="1874" height="296" key="GridCell.Tab.0.center" timestamp="1575041586591">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1874" height="296" key="GridCell.Tab.0.center/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1575040238753" />
-    <state width="1874" height="296" key="GridCell.Tab.0.center/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@1920.0.1920.1080" timestamp="1575041586591" />
-    <state width="1874" height="296" key="GridCell.Tab.0.left" timestamp="1575041586591">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1874" height="296" key="GridCell.Tab.0.left/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1575040238752" />
-    <state width="1874" height="296" key="GridCell.Tab.0.left/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@1920.0.1920.1080" timestamp="1575041586591" />
-    <state width="1874" height="296" key="GridCell.Tab.0.right" timestamp="1575041586592">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1874" height="296" key="GridCell.Tab.0.right/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1575040238753" />
-    <state width="1874" height="296" key="GridCell.Tab.0.right/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@1920.0.1920.1080" timestamp="1575041586592" />
-    <state width="1874" height="344" key="GridCell.Tab.1.bottom" timestamp="1575017780452">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1874" height="344" key="GridCell.Tab.1.bottom/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@1920.0.1920.1080" timestamp="1575017780452" />
-    <state width="1874" height="344" key="GridCell.Tab.1.center" timestamp="1575017780450">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1874" height="344" key="GridCell.Tab.1.center/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@1920.0.1920.1080" timestamp="1575017780450" />
-    <state width="1874" height="344" key="GridCell.Tab.1.left" timestamp="1575017780450">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1874" height="344" key="GridCell.Tab.1.left/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@1920.0.1920.1080" timestamp="1575017780450" />
-    <state width="1874" height="344" key="GridCell.Tab.1.right" timestamp="1575017780451">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1874" height="344" key="GridCell.Tab.1.right/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@1920.0.1920.1080" timestamp="1575017780451" />
-    <state x="849" y="71" width="1024" height="845" key="SettingsEditor" timestamp="1575040268237">
+    <state x="582" y="282" width="735" height="513" key="FileChooserDialogImpl" timestamp="1575140965053">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="849" y="71" width="1024" height="845" key="SettingsEditor/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1575040268237" />
-    <state x="2769" y="45" width="1024" height="845" key="SettingsEditor/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@1920.0.1920.1080" timestamp="1575019561440" />
-    <state x="2510" y="323" key="com.intellij.ide.util.TipDialog" timestamp="1575019487793">
+    <state x="582" y="282" width="735" height="513" key="FileChooserDialogImpl/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1575140965053" />
+    <state x="2502" y="262" width="735" height="513" key="FileChooserDialogImpl/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@1920.0.1920.1080" timestamp="1575019576734" />
+    <state width="1874" height="295" key="GridCell.Tab.0.bottom" timestamp="1576090714102">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1874" height="295" key="GridCell.Tab.0.bottom/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1576090714102" />
+    <state width="1874" height="295" key="GridCell.Tab.0.bottom/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@1920.0.1920.1080" timestamp="1576089621331" />
+    <state width="1874" height="295" key="GridCell.Tab.0.center" timestamp="1576090714101">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1874" height="295" key="GridCell.Tab.0.center/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1576090714101" />
+    <state width="1874" height="295" key="GridCell.Tab.0.center/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@1920.0.1920.1080" timestamp="1576089621331" />
+    <state width="1874" height="295" key="GridCell.Tab.0.left" timestamp="1576090714101">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1874" height="295" key="GridCell.Tab.0.left/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1576090714101" />
+    <state width="1874" height="295" key="GridCell.Tab.0.left/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@1920.0.1920.1080" timestamp="1576089621331" />
+    <state width="1874" height="295" key="GridCell.Tab.0.right" timestamp="1576090714102">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1874" height="295" key="GridCell.Tab.0.right/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1576090714102" />
+    <state width="1874" height="295" key="GridCell.Tab.0.right/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@1920.0.1920.1080" timestamp="1576089621331" />
+    <state width="1874" height="344" key="GridCell.Tab.1.bottom" timestamp="1575916664502">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="590" y="342" key="com.intellij.ide.util.TipDialog/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1574914654795" />
-    <state x="2510" y="323" key="com.intellij.ide.util.TipDialog/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@1920.0.1920.1080" timestamp="1575019487793" />
+    <state width="1874" height="344" key="GridCell.Tab.1.bottom/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@1920.0.1920.1080" timestamp="1575916664502" />
+    <state width="1874" height="344" key="GridCell.Tab.1.center" timestamp="1575916664502">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="344" key="GridCell.Tab.1.center/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@1920.0.1920.1080" timestamp="1575916664502" />
+    <state width="1874" height="344" key="GridCell.Tab.1.left" timestamp="1575916664502">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="344" key="GridCell.Tab.1.left/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@1920.0.1920.1080" timestamp="1575916664502" />
+    <state width="1874" height="344" key="GridCell.Tab.1.right" timestamp="1575916664502">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="344" key="GridCell.Tab.1.right/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@1920.0.1920.1080" timestamp="1575916664502" />
+    <state x="701" y="264" width="507" height="550" key="RollbackChangesDialog" timestamp="1576090759057">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="701" y="264" width="507" height="550" key="RollbackChangesDialog/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1576090759057" />
+    <state x="849" y="71" width="1024" height="845" key="SettingsEditor" timestamp="1575673621045">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="849" y="71" width="1024" height="845" key="SettingsEditor/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1575673621045" />
+    <state x="2266" y="200" width="1024" height="845" key="SettingsEditor/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@1920.0.1920.1080" timestamp="1575629748870" />
+    <state x="2510" y="323" key="com.intellij.ide.util.TipDialog" timestamp="1576085303620">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="590" y="342" key="com.intellij.ide.util.TipDialog/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1575832186643" />
+    <state x="2510" y="323" key="com.intellij.ide.util.TipDialog/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@1920.0.1920.1080" timestamp="1576085303620" />
+    <state x="703" y="435" width="503" height="207" key="git4idea.ui.GitResetDialog" timestamp="1576090772056">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="703" y="435" width="503" height="207" key="git4idea.ui.GitResetDialog/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1576090772056" />
+    <state x="703" y="373" width="503" height="332" key="git4idea.ui.GitUnstashDialog" timestamp="1576090784571">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="703" y="373" width="503" height="332" key="git4idea.ui.GitUnstashDialog/1920.0.1920.1080/3840.312.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1576090784571" />
     <state x="2189" y="154" width="1372" height="796" key="new project wizard" timestamp="1575020128641">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
