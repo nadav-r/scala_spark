@@ -6,6 +6,8 @@ import org.apache.spark.rdd._
 import org.apache.spark.util.LongAccumulator
 import org.apache.log4j._
 import scala.collection.mutable.ArrayBuffer
+import scala.util.control.Breaks._
+
 
 /** Finds the degrees of separation between two Marvel comic book characters, based
  *  on co-appearances in a comic.
@@ -14,11 +16,11 @@ object DegreesOfSeparation {
   
   // The characters we want to find the separation between.
   val startCharacterID = 5306 //SpiderMan
-  val targetCharacterID = 14 //ADAM 3,031 (who?)
+  var targetCharacterID = 14 //ADAM 3,031 (who?)
   
   // We make our accumulator a "global" Option so we can reference it in a mapper later.
   var hitCounter:Option[LongAccumulator] = None
-  
+  var reg_acc = 0
   // Some custom data types 
   // BFSData contains an array of hero ID connections, the distance, and color.
   type BFSData = (Array[Int], Int, String)
@@ -27,7 +29,7 @@ object DegreesOfSeparation {
     
   /** Converts a line of raw input into a BFSNode */
   def convertToBFS(line: String): BFSNode = {
-    
+    println("here")
     // Split up the line into fields
     val fields = line.split("\\s+")
     
@@ -50,13 +52,17 @@ object DegreesOfSeparation {
       distance = 0
     }
     
-    return (heroID, (connections.toArray, distance, color))
+    (heroID, (connections.toArray, distance, color))
   }
   
   /** Create "iteration 0" of our RDD of BFSNodes */
-  def createStartingRdd(sc:SparkContext): RDD[BFSNode] = {
-    val inputFile = sc.textFile("Marvel-graph.txt")
-    return inputFile.map(convertToBFS)
+  def createStartingRdd(sc:SparkContext): Array[BFSNode] = {
+    //val inputFile = sc.textFile("Marvel-graph.txt")
+    val source = scala.io.Source.fromFile("Marvel-graph.txt")
+    val input = try source.mkString finally source.close()
+    val lines: Array[String] = input.split("\n").filter(_.trim.nonEmpty)
+    //inputFile.map(line => convertToBFS(line))
+    lines.map(line => convertToBFS(line))
   }
   
   /** Expands a BFSNode into this node and its children */
@@ -81,11 +87,11 @@ object DegreesOfSeparation {
         val newCharacterID = connection
         val newDistance = distance + 1
         val newColor = "GRAY"
-        
+
         // Have we stumbled across the character we're looking for?
         // If so increment our accumulator so the driver script knows.
         if (targetCharacterID == connection) {
-          if (hitCounter.isDefined) {
+          if (true) {
             hitCounter.get.add(1)
           }
         }
@@ -104,7 +110,7 @@ object DegreesOfSeparation {
     val thisEntry:BFSNode = (characterID, (connections, distance, color))
     results += thisEntry
     
-    return results.toArray
+     results.toArray
   }
   
   /** Combine nodes for the same heroID, preserving the shortest length and darkest color. */
@@ -160,7 +166,7 @@ object DegreesOfSeparation {
 	  color = color1
 	}
     
-    return (edges.toArray, distance, color)
+     (edges.toArray, distance, color)
   }
     
   /** Our main function where the action happens */
@@ -168,41 +174,84 @@ object DegreesOfSeparation {
    
     // Set the log level to only print errors
     Logger.getLogger("org").setLevel(Level.ERROR)
-    
-     // Create a SparkContext using every core of the local machine
-    val sc = new SparkContext("local[*]", "DegreesOfSeparation") 
-    
-    // Our accumulator, used to signal when we find the target 
-    // character in our BFS traversal.
+//     // Create a SparkContext using every core of the local machine
+    val sc = new SparkContext("local[*]", "DegreesOfSeparation")
+//
+//    // Our accumulator, used to signal when we find the target
+//    // character in our BFS traversal.
     hitCounter = Some(sc.longAccumulator("Hit Counter"))
-    
-    var iterationRdd = createStartingRdd(sc)
-    
-    var iteration:Int = 0
-    for (iteration <- 1 to 10) {
-      println("Running BFS Iteration# " + iteration)
-   
-      // Create new vertices as needed to darken or reduce distances in the
-      // reduce stage. If we encounter the node we're looking for as a GRAY
-      // node, increment our accumulator to signal that we're done.
-      val mapped = iterationRdd.flatMap(bfsMap)
-      
-      // Note that mapped.count() action here forces the RDD to be evaluated, and
-      // that's the only reason our accumulator is actually updated.  
-      println("Processing " + mapped.count() + " values.")
-      
-      if (hitCounter.isDefined) {
-        val hitCount = hitCounter.get.value
-        if (hitCount > 0) {
-          println("Hit the target character! From " + hitCount + 
-              " different direction(s).")
-          return
+//
+//    var iterationRdd = createStartingRdd(sc)
+//
+//    var iteration:Int = 0
+//    for (iteration <- 1 to 10) {
+//      println("Running BFS Iteration# " + iteration)
+//
+//      // Create new vertices as needed to darken or reduce distances in the
+//      // reduce stage. If we encounter the node we're looking for as a GRAY
+//      // node, increment our accumulator to signal that we're done.
+//      val mapped = iterationRdd.flatMap(bfsMap)
+//
+//      // Note that mapped.count() action here forces the RDD to be evaluated, and
+//      // that's the only reason our accumulator is actually updated.
+//      println("Processing " + mapped.count() + " values.")
+//
+//      if (hitCounter.isDefined) {
+//        val hitCount = hitCounter.get.value
+//        if (hitCount > 0) {
+//          println("Hit the target character! From " + hitCount +
+//              " different direction(s).")
+//          return
+//        }
+//      }
+//
+//      // Reducer combines data for each character ID, preserving the darkest
+//      // color and shortest path.
+//      iterationRdd = mapped.reduceByKey(bfsReduce)
+//    }
+    var max_iterations = 0
+    var max_id = 0
+
+    for (id <- 1 to 1000){
+
+      //sc.stop()
+      //sc = new SparkContext("local[*]", "DegreesOfSeparation")
+    //  println(s"id = $id")
+      reg_acc=0
+      targetCharacterID = id
+      println(targetCharacterID)
+      // Create a SparkContext using every core of the local machine
+
+      // Our accumulator, used to signal when we find the target
+      // character in our BFS traversal.
+      //hitCounter = Some(sc.longAccumulator("Hit Counter"))
+
+      var iterationRdd = createStartingRdd(sc)
+
+
+      breakable {
+        for (iteration <- 1 to 10) {
+
+          val mapped = iterationRdd.flatMap(bfsMap)
+
+          if (hitCounter.isDefined && hitCounter.get.value > 0) {
+            println("here")
+            if (iteration > max_iterations) {
+              max_iterations = iteration
+              max_id = id
+            }
+            hitCounter.get.reset()
+            break
+          }
+
+
+          // Reducer combines data for each character ID, preserving the darkest
+          // color and shortest path.
+          iterationRdd = mapped.reduceByKey(bfsReduce)
         }
       }
-      
-      // Reducer combines data for each character ID, preserving the darkest
-      // color and shortest path.      
-      iterationRdd = mapped.reduceByKey(bfsReduce)
+
     }
+    println(s"max id $max_id max iteration $max_iterations")
   }
 }
